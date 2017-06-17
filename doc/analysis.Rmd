@@ -1,0 +1,30 @@
+---
+title: "pharmacogx dataset"
+author: "BBN - Sancar Adali"
+date: "June 16, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+Similarity matrix Dataset <http://cancerres.aacrjournals.org/highwire/filestream/335671/field_highwire_adjunct_files/2/177323_1_supp_3899876_bmkvbb.xlsx>
+
+
+```{r cars}
+curl('http://cancerres.aacrjournals.org/highwire/filestream/335671/field_highwire_adjunct_files/2/177323_1_supp_3899876_bmkvbb.xlsx')
+ download.file('http://cancerres.aacrjournals.org/highwire/filestream/335671/field_highwire_adjunct_files/2/177323_1_supp_3899876_bmkvbb.xlsx',destfile = "./pharmacoNetFusion/data/pharmacoSimMatrix.xlsx")
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
