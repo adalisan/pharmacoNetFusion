@@ -44,6 +44,7 @@ for (i in 1:3)
     w.val.vec <- 0.8
     rep.i <- 1
     size.vec <- seq(0, 1, 0.05)
+    
     first_result <- OmnibusEmbed::run.JOFC.match.jacknife.replicate (m.i = rep.i, N = 239, test.samp.size = 20, 
                                                      w.val.len = 1, 
                                                      Diss.E = matlist[[i]], Diss.F = matlist[[j]], 
@@ -53,7 +54,7 @@ for (i in 1:3)
                                                      w.vals = w.val.vec, size = size.vec, 
                                                      verbose = TRUE, level.critical.val = 0.05)
   }
-1
+
     jk.res.IsoJ <- foreach (rep.i = 1:nmc) %dopar% {
     
 
