@@ -19,7 +19,9 @@ for ( sh in 1:4 ) {
 diss.matlist <- list()
 for (mat in matlist) {
   mat = mat / max(max(mat))
+  mat = sqrt(1 - mat)
   diss.matlist <- c(diss.matlist,list(mat))
+ 
 }
 saveRDS(matlist,"data/DissimilarityMatrixList.RData")
 init_mat <- array(0,dim = c(9,dim(matlist[[1]])[1], dim(matlist[[1]])[1]))
@@ -39,15 +41,15 @@ nmc = 8
 
 registerDoSNOW(cl)
 for (i in 1:3)
-  for (j in 2:4){
-    omni.mat <- OmnibusEmbed::omnibusM.Kcond(diss.matlist[c(i,j)],init_mat)
+  for (j in (i+1):4){
+    #omni.mat <- OmnibusEmbed::omnibusM.Kcond(diss.matlist[c(i,j)],init_mat)
     w.val.vec <- 0.8
     rep.i <- 1
     size.vec <- seq(0, 1, 0.05)
     
-    first_result <- OmnibusEmbed::run.JOFC.match.jacknife.replicate (m.i = rep.i, N = 239, test.samp.size = 20, 
+    first_result <- run.JOFC.match.jacknife.replicate(m.i = rep.i, N = 239, test.samp.size = 20, 
                                                      w.val.len = 1, 
-                                                     Diss.E = matlist[[i]], Diss.F = matlist[[j]], 
+                                                     Diss.E = diss.matlist[[j]], Diss.F = diss.matlist[[j]], 
                                                      d = 3,   oos = TRUE,   separability.entries.w = TRUE
                                                      , wt.equalize = FALSE, assume.matched.for.oos = TRUE
                                                      , oos.use.imputed = FALSE, 
