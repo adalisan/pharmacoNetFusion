@@ -23,7 +23,7 @@ for (mat in matlist) {
   diss.matlist <- c(diss.matlist,list(mat))
  
 }
-saveRDS(matlist,"data/DissimilarityMatrixList.RData")
+saveRDS(diss.matlist,"data/DissimilarityMatrixList.RData")
 init_mat <- array(0,dim = c(9,dim(matlist[[1]])[1], dim(matlist[[1]])[1]))
 for (k in 1:9){
   diag(init_mat[k, , ]) = 1
