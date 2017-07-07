@@ -17,6 +17,7 @@ Similarity matrix Dataset <http://cancerres.aacrjournals.org/highwire/filestream
 ```{r cars}
 curl('http://cancerres.aacrjournals.org/highwire/filestream/335671/field_highwire_adjunct_files/2/177323_1_supp_3899876_bmkvbb.xlsx')
  download.file('http://cancerres.aacrjournals.org/highwire/filestream/335671/field_highwire_adjunct_files/2/177323_1_supp_3899876_bmkvbb.xlsx',destfile = "./pharmacoNetFusion/data/pharmacoSimMatrix.xlsx")
+require(foreign ) 
 ```
 
 ## Including Plots
