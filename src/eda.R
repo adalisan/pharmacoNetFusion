@@ -5,6 +5,9 @@ load.project()
 library(OmnibusEmbed)
 download.file("https://cancerres.aacrjournals.org/highwire/filestream/335671/field_highwire_adjunct_files/2/177323_1_supp_3899876_bmkvbb.xlsx", destfile = "data/simmatrix.xlsx")
 
+download.file("https://www.pmgenomics.ca/bhklab/software/pharmacogx/CCLE_Nature2013.RData",destfile = "data/CCLE_Nature2013.RData")
+download.file("https://www.pmgenomics.ca/bhklab/software/pharmacogx/CGP_Nature2013.RData",destfile = "data/CGP_Nature2013.RData")
+
 
 matlist = list()
 entities = list()
